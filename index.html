@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David & Reyna</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --crema:#f5efe6;
+  --cafe:#4b2e2e;
+  --beige:#e8ded2;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: 'Playfair Display', serif;
+  background: var(--crema);
+  color: var(--cafe);
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:
+    linear-gradient(rgba(75,46,46,0.4), rgba(75,46,46,0.4)),
+    url("Boda1.jpeg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:3rem;
+  letter-spacing:5px;
+}
+
+.hero p{
+  font-family:'Great Vibes', cursive;
+  font-size:2rem;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  padding:50px;
+  align-items:center;
+}
+
+.grid img{
+  width:100%;
+  border-radius:10px;
+}
+
+.text-box{
+  padding:20px;
+}
+
+.text-box h2{
+  margin-bottom:15px;
+}
+
+/* SECCIONES */
+.light{
+  background:var(--beige);
+  padding:60px 20px;
+  text-align:center;
+}
+
+/* BOTON */
+.btn{
+  margin-top:20px;
+  padding:12px 25px;
+  border:1px solid var(--cafe);
+  background:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:var(--cafe);
+  color:white;
+}
+
+/* FOOTER */
+.footer{
+  padding:60px 20px;
+  text-align:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .grid{
+    grid-template-columns:1fr;
+    padding:20px;
+  }
+
+  .hero h1{
+    font-size:2rem;
+  }
+
+  .hero p{
+    font-size:1.5rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>DAVID & REYNA</h1>
+    <p>Ambos diremos "Acepto"</p>
+    <br>
+    <p>18 de julio 2026 · 5:00 PM</p>
+    <p>Jardín de Eventos del Pinar</p>
+  </div>
+</section>
+
+<!-- HISTORIA -->
+<section class="grid">
+  <img src="Boda2.jpeg">
+  <div class="text-box">
+    <div>
+      <h2>UNA CHICA CONOCE A UN CHICO...</h2>
+      <p>
+        Pasamos de amigos de la infancia y novios de secundaria,
+        a reencontrarnos y comenzar un nuevo capítulo juntos.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- INFO EVENTO -->
+<section class="light">
+  <h2>Sé testigo de nuestro día especial</h2>
+  <p><strong>Fecha:</strong> 18 julio 2026</p>
+  <p><strong>Hora:</strong> 5:00 PM</p>
+  <p><strong>Lugar:</strong> Jardín de Eventos del Pinar</p>
+  <p><strong>Vestimenta:</strong> Formal o cóctel</p>
+</section>
+
+<!-- GALERIA -->
+<section class="grid">
+  <div class="text-box">
+    <div>
+      <h2>Tu presencia es nuestro mejor regalo</h2>
+      <p>
+       Tu presencia en nuestra boda es el unico regalo que pedimos.
+      </p>
+    </div>
+  </div>
+  <img src="Boda3.jpeg">
+</section>
+
+<!-- EXTRA FOTO -->
+<section class="grid">
+  <img src="Boda4.jpeg">
+  <div class="text-box">
+    <div>
+      <h2>Un nuevo comienzo</h2>
+      <p>
+        Estamos listos para escribir juntos esta nueva historia
+        llena de amor, fe y propósito.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="footer">
+  <h2>Esperamos verte desde el altar</h2>
+  <p>Confirma tu asistencia antes del gran día</p>
+
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdD8zI4NkuJCHqPa6uYcXgXGsS_oT5v49-QYVbxcgLFUJiM4g/viewform?usp=dialog" target="_blank">
+  <button class="btn">Confirmar asistencia</button>
+</a>
+</section>
+
+</body>
+</html>
