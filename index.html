@@ -51,6 +51,13 @@ body{
   font-size:2rem;
 }
 
+/* COUNTDOWN */
+.countdown{
+  margin-top:20px;
+  font-size:1.2rem;
+  letter-spacing:2px;
+}
+
 /* GRID */
 .grid{
   display:grid;
@@ -80,6 +87,13 @@ body{
   text-align:center;
 }
 
+/* VERSICULO */
+.verse{
+  padding:60px 20px;
+  text-align:center;
+  font-style:italic;
+}
+
 /* BOTON */
 .btn{
   margin-top:20px;
@@ -99,6 +113,13 @@ body{
 .footer{
   padding:60px 20px;
   text-align:center;
+}
+
+/* AVISO */
+.notice{
+  margin-bottom:20px;
+  font-size:0.9rem;
+  color:#7a5a5a;
 }
 
 /* RESPONSIVE */
@@ -128,8 +149,10 @@ body{
     <h1>DAVID & REYNA</h1>
     <p>Ambos diremos "Acepto"</p>
     <br>
-    <p>18 de julio 2026 · 5:00 PM</p>
-    <p>Jardín de Eventos del Pinar</p>
+    <p>Sábado 18 de julio · 1:30 PM</p>
+    <p>Proyecto Oruga</p>
+
+    <div class="countdown" id="countdown"></div>
   </div>
 </section>
 
@@ -137,34 +160,39 @@ body{
 <section class="grid">
   <img src="Boda2.jpeg">
   <div class="text-box">
-    <div>
-      <h2>UNA CHICA CONOCE A UN CHICO...</h2>
-      <p>
-        Pasamos de amigos de la infancia y novios de secundaria,
-        a reencontrarnos y comenzar un nuevo capítulo juntos.
-      </p>
-    </div>
+    <h2>UNA CHICA CONOCE A UN CHICO...</h2>
+    <p>
+      Pasamos de amigos de la infancia y novios de secundaria,
+      a reencontrarnos y comenzar un nuevo capítulo juntos.
+    </p>
   </div>
 </section>
 
 <!-- INFO EVENTO -->
 <section class="light">
   <h2>Sé testigo de nuestro día especial</h2>
-  <p><strong>Fecha:</strong> 18 julio 2026</p>
-  <p><strong>Hora:</strong> 5:00 PM</p>
-  <p><strong>Lugar:</strong> Jardín de Eventos del Pinar</p>
+  <p><strong>Fecha:</strong> Sábado 18 julio 2026</p>
+  <p><strong>Hora:</strong> 1:30 PM</p>
+  <p><strong>Lugar:</strong> Proyecto Oruga</p>
   <p><strong>Vestimenta:</strong> Formal o cóctel</p>
+</section>
+
+<!-- VERSICULO -->
+<section class="verse">
+  <p>
+    "Y si alguno prevaleciere contra uno, dos le resistirán;
+    y cordón de tres dobleces no se rompe pronto."
+  </p>
+  <strong>Eclesiastés 4:12</strong>
 </section>
 
 <!-- GALERIA -->
 <section class="grid">
   <div class="text-box">
-    <div>
-      <h2>Tu presencia es nuestro mejor regalo</h2>
-      <p>
-       Tu presencia en nuestra boda es el unico regalo que pedimos.
-      </p>
-    </div>
+    <h2>Tu presencia es nuestro mejor regalo</h2>
+    <p>
+     Tu presencia en nuestra boda es el unico regalo que pedimos.
+    </p>
   </div>
   <img src="Boda3.jpeg">
 </section>
@@ -173,13 +201,11 @@ body{
 <section class="grid">
   <img src="Boda4.jpeg">
   <div class="text-box">
-    <div>
-      <h2>Un nuevo comienzo</h2>
-      <p>
-        Estamos listos para escribir juntos esta nueva historia
-        llena de amor, fe y propósito.
-      </p>
-    </div>
+    <h2>Un nuevo comienzo</h2>
+    <p>
+      Estamos listos para escribir juntos esta nueva historia
+      llena de amor, fe y propósito.
+    </p>
   </div>
 </section>
 
@@ -188,10 +214,37 @@ body{
   <h2>Esperamos verte desde el altar</h2>
   <p>Confirma tu asistencia antes del gran día</p>
 
+  <p class="notice">
+    Aunque nos encantan los niños y por razones de seguridad,
+    esta sera una celebracion solo para adultos.
+  </p>
+
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSdD8zI4NkuJCHqPa6uYcXgXGsS_oT5v49-QYVbxcgLFUJiM4g/viewform?usp=header" target="_blank">
-  <button class="btn">Confirmar asistencia</button>
-</a>
+    <button class="btn">Confirmar asistencia</button>
+  </a>
 </section>
+
+<script>
+const countdown = document.getElementById("countdown");
+const weddingDate = new Date("July 18, 2026 13:30:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = weddingDate - now;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  countdown.innerHTML = 
+    days + " días · " +
+    hours + " hrs · " +
+    minutes + " min · " +
+    seconds + " seg";
+
+}, 1000);
+</script>
 
 </body>
 </html>
